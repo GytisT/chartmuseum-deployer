@@ -2,11 +2,10 @@ FROM alpine:3.10
 
 LABEL maintainer="Gytis Tamulynas <GytisT1@gmail.com>" \
     description="Alpine with helm and curl. Made for packaging and uploading charts to chartmuseum" \
-    version="v1.0.0"
+    version="v2.0.0"
 
-# ENV BASE_URL="https://storage.googleapis.com/kubernetes-helm"
 ENV BASE_URL="https://get.helm.sh"
-ENV TAR_FILE="helm-v2.15.1-linux-amd64.tar.gz"
+ENV TAR_FILE="helm-v3.0.2-linux-amd64.tar.gz"
 
 RUN apk add --update --no-cache curl ca-certificates && \
     curl -L ${BASE_URL}/${TAR_FILE} |tar xvz && \
